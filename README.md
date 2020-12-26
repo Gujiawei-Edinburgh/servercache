@@ -1,4 +1,3 @@
-#README
 ##Background
 1. A system can produce various types of messages such as WeChat messages and mail messages. These messages are sent to users through different ways.
 2. The messages can be produced with a very high frequency, however, due to capacity limitation, the servers cannot send messages very fast. Therefore, messages need to be cached in a message queue.
