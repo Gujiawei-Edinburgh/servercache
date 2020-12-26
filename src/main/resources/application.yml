@@ -1,0 +1,4 @@
+server-config:
+  capacity: 10
+  isEvicated: true
+  qps: 0.1
