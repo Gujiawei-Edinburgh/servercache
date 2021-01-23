@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 
-public class Clinet {
+public class Client {
     public static void main(String[] args) {
         ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(10);
         for (int count = 0; count < executor.getPoolSize(); count++){
