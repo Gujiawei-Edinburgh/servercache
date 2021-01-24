@@ -1,7 +1,7 @@
 package com.server.cache;
 
-import com.google.common.util.concurrent.RateLimiter;
 import com.server.cache.consumer.Consumer;
+import com.server.cache.limiter.RateLimiter;
 import com.server.cache.messagequeue.MessageQueue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -25,7 +25,7 @@ public class CacheApplication {
     public void createConsumer(){
         ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(1);
         Consumer consumer = Consumer.builder()
-                .rateLimiter(RateLimiter.create(10))
+                .rateLimiter(new RateLimiter(10, 1000))
                 .mq(messageQueue)
                 .build();
         executor.submit(consumer);

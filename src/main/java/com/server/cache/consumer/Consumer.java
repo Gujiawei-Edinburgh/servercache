@@ -1,9 +1,8 @@
 package com.server.cache.consumer;
 
-import com.google.common.util.concurrent.RateLimiter;
+import com.server.cache.limiter.RateLimiter;
 import com.server.cache.messagequeue.MessageQueue;
 import lombok.Builder;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Builder
 public class Consumer implements Runnable{
@@ -14,7 +13,7 @@ public class Consumer implements Runnable{
 
 
     public String consumeMsg(){
-        if (rateLimiter.tryAcquire()){
+        if (rateLimiter.tryAcquire(mq.getQueue().peek())){
             System.out.println("-----try to consume message-----");
             try{
                 mq.sendMsg();

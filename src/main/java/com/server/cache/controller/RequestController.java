@@ -1,6 +1,5 @@
 package com.server.cache.controller;
 
-import com.server.cache.message.AbstractMessage;
 import com.server.cache.message.RequestMessage;
 import com.server.cache.message.ResponseMessage;
 import com.server.cache.producer.Producer;
