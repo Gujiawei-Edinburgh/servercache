@@ -9,5 +9,5 @@ For this project, it consists of following parts.
 rejection/eviction policy. In this demo, users can assign them through `application.yml`.
 2. Producer. When the interface `/send` is requested, the coming messages will be processed by the producer. It will cache message by using message queue that mentioned above.
 3. Consumer. In order to send messages smoothly, `RateLimter` is adopted to implement the token algorithm. ALso, due to the message is a blocking queue, when the queue is empty, the consumer thread will be blocked and will be notified by the queue automatically. To some extent, it improves the CPU utilization.
-4. Client. It can mimic the messages production with a high frequency by using thread pool. It will request server `/send` interface frequently.
+4. ClientDemo. It can mimic the messages production with a high frequency by using thread pool. It will request server `/send` interface frequently.
 
